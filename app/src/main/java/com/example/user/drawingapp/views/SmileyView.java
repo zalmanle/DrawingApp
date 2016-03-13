@@ -32,12 +32,6 @@ public class SmileyView extends View implements IExecutable{
 
     private static final float OFFSET = 0.1f;
 
-    private static final int ROTATE_EXECUTOR_POSITION = 0;
-
-    private static final int TRANSLATE_EXECUTOR_POSITION = 1;
-
-    private static final int SCALE_EXECUTOR_POSITION = 2;
-
     //endregion
     //region Instance Variables
     private Paint paint;
