@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.example.user.drawingapp.views.MultiColorsPainterView
+        android:id="@+id/advanced_painter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/clear_button"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_margin = "30dp"
+        android:src="@drawable/delete" />
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/undo_button"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_margin = "30dp"
+        android:src="@drawable/ic_undo_24dp" />
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/blue_button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:backgroundTint="@android:color/holo_blue_dark"
+        />
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/green_button"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/blue_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:backgroundTint="@android:color/holo_green_dark" />
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/red_button"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/green_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:backgroundTint="@android:color/holo_red_dark" />
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/black_button"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/red_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:backgroundTint="@android:color/black" />
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/orange_button"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/black_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:backgroundTint="@android:color/holo_orange_dark" />
+
+
+
+
+    <SeekBar
+        android:id="@+id/size_seek_bar"
+        android:layout_marginBottom="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
