@@ -9,6 +9,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
+import com.example.user.drawingapp.fragments.AdvancedPainterFragment;
 import com.example.user.drawingapp.fragments.PainterFragment;
 import com.example.user.drawingapp.fragments.SmileFragment;
 import com.example.user.drawingapp.fragments.SmileyFragment;
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
 
             case R.id.advanced_painter_fragment_item:
-
+                loader.loadAdvancedPainterFragment();
                 return true;
             case R.id.exit_item:
                 this.finish();
@@ -104,6 +105,12 @@ public class MainActivity extends AppCompatActivity {
         private void loadPainterFragment(){
             transaction = manager.beginTransaction();
             transaction.replace(R.id.container,new PainterFragment());
+            transaction.commit();
+        }
+
+        private void loadAdvancedPainterFragment(){
+            transaction = manager.beginTransaction();
+            transaction.replace(R.id.container,new AdvancedPainterFragment());
             transaction.commit();
         }
     }
