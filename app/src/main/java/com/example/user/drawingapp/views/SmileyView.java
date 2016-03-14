@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
+import android.util.AttributeSet;
 import android.view.View;
 
 import com.example.user.drawingapp.R;
@@ -32,6 +33,7 @@ public class SmileyView extends View implements IExecutable{
 
     private static final float OFFSET = 0.1f;
 
+
     //endregion
     //region Instance Variables
     private Paint paint;
@@ -54,11 +56,26 @@ public class SmileyView extends View implements IExecutable{
     //endregion
     public SmileyView(Context context) {
         super(context);
+        initFields(context);
+
+    }
+
+    private void initFields(Context context) {
         posY = MOVE_OFFSET;
         paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         shape = ContextCompat.getDrawable(context.getApplicationContext(), R.drawable.background);
         path = new Path();
         density = context.getResources().getDisplayMetrics().density;
+    }
+
+    public SmileyView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        initFields(context);
+    }
+
+    public SmileyView(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        initFields(context);
     }
 
     @Override

@@ -8,6 +8,8 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
+import android.support.v4.content.ContextCompat;
+import android.util.AttributeSet;
 import android.view.View;
 
 import com.example.user.drawingapp.R;
@@ -52,13 +54,30 @@ public class SmileView extends View {
 
     private int currentMoveCode = MOVE_DOWN_CODE;
     //endregion
+    //region Constructors
     public SmileView(Context context) {
         super(context);
+        initFields(context);
+
+    }
+
+    private void initFields(Context context) {
         posY = MOVE_OFFSET;
         paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        shape = context.getResources().getDrawable(R.drawable.background);
+        shape = ContextCompat.getDrawable(context.getApplicationContext(), R.drawable.background);
         path = new Path();
     }
+
+    public SmileView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        initFields(context);
+    }
+
+    public SmileView(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        initFields(context);
+    }
+    //endregion
 
     @Override
     protected void onDraw(Canvas canvas) {
@@ -134,7 +153,7 @@ public class SmileView extends View {
         canvas.save();
         canvas.translate(0 * density, posY * density);
         canvas.rotate(angle, 180 * density, 200 * density);
-        canvas.scale(scaleOffset, scaleOffset,180 * density,200 * density);
+        canvas.scale(scaleOffset, scaleOffset, 180 * density, 200 * density);
 
         canvas.drawPath(path, paint);
         canvas.restore();
@@ -195,6 +214,7 @@ public class SmileView extends View {
     private void drawSmileHead(Canvas canvas, int density) {
         paint.setARGB(200, 255, 255, 0);
         paint.setStyle(Paint.Style.FILL_AND_STROKE);
+
 
         canvas.save();
         canvas.translate(0 * density, posY * density);

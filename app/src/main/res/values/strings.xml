@@ -3,4 +3,9 @@
     <string name="rotate_button_text">Rotate</string>
     <string name="translate_button_text">Translate</string>
     <string name="scale_button_text">Scale</string>
+    <string name="exit_menu_item_text">Exit</string>
+    <string name="smile_fragment_item_text">Smile Fragment</string>
+    <string name="smiley_fragment_item_text">Smiley Fragment</string>
+    <string name="painter_fragment_item_text">Painter</string>
+    <string name="advanced_painter_fragment_item_text">Advanced Painter</string>
 </resources>

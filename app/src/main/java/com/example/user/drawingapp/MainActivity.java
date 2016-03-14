@@ -1,69 +1,38 @@
 package com.example.user.drawingapp;
 
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 
-import com.example.user.drawingapp.views.SmileView;
-import com.example.user.drawingapp.views.SmileyView;
+import com.example.user.drawingapp.fragments.SmileFragment;
+import com.example.user.drawingapp.fragments.SmileyFragment;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity {
 
-    //region Constants
-    private static final int MESSAGE_CODE = 0;
-    //endregion
     //region Instance Variables
     private FrameLayout container;
 
-    private LinearLayout buttonsContainer;
-
-    private SmileView smileView;
-
-    private SmileyView smileyView;
-
-    private Button rotateBtn;
-
-    private Button translateBtn;
-
-    private Button scaleBtn;
-
-    private View currentView;
+    private FragmentsLoader loader;
     //endregion
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initElements();
-        setDefault();
+        loader = new FragmentsLoader();
 
     }
 
-    private void setDefault() {
-
-        container.removeAllViews();
-        container.addView(smileyView);
-        currentView = smileyView;
-    }
 
     private void initElements() {
-        container = (FrameLayout) findViewById(R.id.smile_container);
-        buttonsContainer = (LinearLayout) findViewById(R.id.buttons_container);
-        smileView = new SmileView(this);
-        smileyView = new SmileyView(this);
-        rotateBtn = (Button)findViewById(R.id.rotate_button);
-        rotateBtn.setOnClickListener(this);
-        translateBtn = (Button)findViewById(R.id.translate_button);
-        translateBtn.setOnClickListener(this);
-        scaleBtn = (Button)findViewById(R.id.scale_button);
-        scaleBtn.setOnClickListener(this);
+        container = (FrameLayout) findViewById(R.id.container);
+
+
     }
 
     // Initiating Menu XML file (menu.xml)
@@ -85,55 +54,55 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (item.getItemId())
         {
-            case R.id.first_menu_item:
-                setDefault();
-                buttonsContainer.setVisibility(View.VISIBLE);
-                handler.removeMessages(MESSAGE_CODE);
+            case R.id.smile_fragment_item:
+                loader.loadSmileFragment();
                 return true;
 
-            case R.id.second_menu_item:
-                displaySmile();
-                buttonsContainer.setVisibility(View.GONE);
+            case R.id.smiley_fragment_item:
+                loader.loadSmileyFragment();
                 return true;
+            case R.id.painter_fragment_item:
+
+                return true;
+
+            case R.id.advanced_painter_fragment_item:
+
+                return true;
+            case R.id.exit_item:
+                this.finish();
+                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
-    @Override
-    public void onClick(View v) {
-      if(currentView instanceof SmileyView) {
-          switch(v.getId()){
-              case R.id.rotate_button:
-                  smileyView.rotate();
-                  break;
-              case R.id.translate_button:
-                  smileyView.translate();
-                  break;
-              case R.id.scale_button:
-                  smileyView.scale();
-                  break;
-          }
-      }
-    }
+    private class FragmentsLoader {
 
+        //region Instance Variables
+        private FragmentManager manager;
 
-
-    private void displaySmile() {
-
-        container.removeAllViews();
-        container.addView(smileView);
-        currentView = smileView;
-        handler.sendEmptyMessageDelayed(MESSAGE_CODE,500);
-    }
-
-    Handler handler = new Handler(new Handler.Callback() {
-        @Override
-        public boolean handleMessage(Message msg) {
-
-            currentView.invalidate();
-            handler.sendEmptyMessageDelayed(MESSAGE_CODE,500);
-            return true;
+        private FragmentTransaction transaction;
+        //endregion
+        private FragmentsLoader(){
+            manager = getSupportFragmentManager();
         }
-    });
+
+        private void loadSmileFragment(){
+            transaction = manager.beginTransaction();
+            transaction.replace(R.id.container,new SmileFragment());
+            transaction.commit();
+        }
+
+        private void loadSmileyFragment(){
+            transaction = manager.beginTransaction();
+            transaction.replace(R.id.container,new SmileyFragment());
+            transaction.commit();
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+
+    }
 }

@@ -2,10 +2,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/first_menu_item"
-        android:title="First" />
+        android:id="@+id/smile_fragment_item"
+        android:title="@string/smile_fragment_item_text" />
     <item
-        android:id="@+id/second_menu_item"
-        android:title="Second" />
+        android:id="@+id/smiley_fragment_item"
+        android:title="@string/smiley_fragment_item_text" />
+    <item
+        android:id="@+id/painter_fragment_item"
+        android:title="@string/painter_fragment_item_text" />
+    <item
+        android:id="@+id/advanced_painter_fragment_item"
+        android:title="@string/advanced_painter_fragment_item_text" />
+    <item
+        android:id="@+id/exit_item"
+        android:title="@string/exit_menu_item_text" />
+
 
 </menu>
