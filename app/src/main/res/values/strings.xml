@@ -8,4 +8,8 @@
     <string name="smiley_fragment_item_text">Smiley Fragment</string>
     <string name="painter_fragment_item_text">Painter</string>
     <string name="advanced_painter_fragment_item_text">Advanced Painter</string>
+    <string name="xml_animation_mode_text">XML Animation</string>
+    <string name="program_animation_mode_text">Program Animation</string>
+    <string name="simple_animation_menu_item_text">Simple Animation</string>
+    <string name="ball_simple_animation_menu_item_text">Simple Ball Animation</string>
 </resources>
