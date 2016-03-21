@@ -13,6 +13,10 @@
     <item
         android:id="@+id/advanced_painter_fragment_item"
         android:title="@string/advanced_painter_fragment_item_text" />
+
+    <item
+        android:id="@+id/simple_animation_fragment_item"
+        android:title="@string/simple_animation_menu_item_text" />
     <item
         android:id="@+id/exit_item"
         android:title="@string/exit_menu_item_text" />
