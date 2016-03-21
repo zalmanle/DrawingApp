@@ -11,6 +11,7 @@ import android.widget.FrameLayout;
 
 import com.example.user.drawingapp.fragments.AdvancedPainterFragment;
 import com.example.user.drawingapp.fragments.PainterFragment;
+import com.example.user.drawingapp.fragments.SimpleAnimationFragment;
 import com.example.user.drawingapp.fragments.SmileFragment;
 import com.example.user.drawingapp.fragments.SmileyFragment;
 
@@ -70,6 +71,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.advanced_painter_fragment_item:
                 loader.loadAdvancedPainterFragment();
                 return true;
+            case R.id.simple_animation_fragment_item:
+                loader.loadCustomAnimationFragment();
+                return true;
             case R.id.exit_item:
                 this.finish();
                 return true;
@@ -111,6 +115,12 @@ public class MainActivity extends AppCompatActivity {
         private void loadAdvancedPainterFragment(){
             transaction = manager.beginTransaction();
             transaction.replace(R.id.container,new AdvancedPainterFragment());
+            transaction.commit();
+        }
+
+        private void loadCustomAnimationFragment(){
+            transaction = manager.beginTransaction();
+            transaction.replace(R.id.container,new SimpleAnimationFragment());
             transaction.commit();
         }
     }
