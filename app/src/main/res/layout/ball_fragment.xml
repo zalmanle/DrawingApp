@@ -1,8 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/ball_main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <RadioGroup
+        android:layout_alignParentTop="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="1"
+        android:id="@+id/options_radio_group">
+
+        <RadioButton
+            android:layout_weight="0.5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/object_animation_text"
+            android:id="@+id/object_animation_radio_button"
+            android:checked="true"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/custom_animation_mode_text"
+            android:id="@+id/custom_animation_radio_button"
+            android:checked="false"
+            android:textSize="20sp"
+            android:layout_weight="0.5" />
+    </RadioGroup>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/animate_button"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/options_radio_group"
+        android:layout_toRightOf="@id/black_button"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/animate_icon"
+        app:backgroundTint="@android:color/holo_blue_light" />
+
 
     <ImageView
         android:id="@+id/ball_image"
