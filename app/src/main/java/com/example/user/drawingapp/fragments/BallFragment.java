@@ -118,19 +118,27 @@ public class BallFragment extends Fragment
 
     private void animateWithObject() {
 
+        if (animatorX1 == null){
+            animatorX1 = ObjectAnimator.ofFloat(imageView,
+                    "translationX",0,350);
 
-        animatorX1 = ObjectAnimator.ofFloat(imageView,
-                "translationX",0,350);
+        }
 
+        if(animatorUpY == null){
+            animatorUpY = ObjectAnimator.ofFloat(imageView,
+                    "translationY",0,-1100);
+        }
 
-        animatorUpY = ObjectAnimator.ofFloat(imageView,
-                "translationY",0,-1100);
+        if(animatorX2 == null){
+            animatorX2 = ObjectAnimator.ofFloat(imageView,
+                    "translationX",350,700);
+        }
 
-        animatorX2 = ObjectAnimator.ofFloat(imageView,
-                "translationX",350,700);
+        if(animatorDownY == null){
+            animatorDownY = ObjectAnimator.ofFloat(imageView,
+                    "translationY",-1100,0);
 
-        animatorDownY = ObjectAnimator.ofFloat(imageView,
-                "translationY",-1100,0);
+        }
 
 
         set = new AnimatorSet();
