@@ -20,6 +20,10 @@
     <item
         android:id="@+id/ball_simple_animation_fragment_item"
         android:title="@string/ball_simple_animation_menu_item_text" />
+
+    <item
+        android:id="@+id/cat_animation_fragment_item"
+        android:title="@string/cat_animation_menu_item_text" />
     <item
         android:id="@+id/exit_item"
         android:title="@string/exit_menu_item_text" />
