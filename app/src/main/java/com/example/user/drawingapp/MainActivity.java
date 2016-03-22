@@ -11,6 +11,7 @@ import android.widget.FrameLayout;
 
 import com.example.user.drawingapp.fragments.AdvancedPainterFragment;
 import com.example.user.drawingapp.fragments.BallFragment;
+import com.example.user.drawingapp.fragments.CatAnimationFragment;
 import com.example.user.drawingapp.fragments.PainterFragment;
 import com.example.user.drawingapp.fragments.SimpleAnimationFragment;
 import com.example.user.drawingapp.fragments.SmileFragment;
@@ -78,6 +79,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.ball_simple_animation_fragment_item:
                 loader.loadSimpleBollAnimationFragment();
                 return true;
+            case R.id.cat_animation_fragment_item:
+                loader.loadCatAnimationFragment();
+                return true;
             case R.id.exit_item:
                 this.finish();
                 return true;
@@ -131,6 +135,12 @@ public class MainActivity extends AppCompatActivity {
         private void loadSimpleBollAnimationFragment(){
             transaction = manager.beginTransaction();
             transaction.replace(R.id.container,new BallFragment());
+            transaction.commit();
+        }
+
+        private void loadCatAnimationFragment(){
+            transaction = manager.beginTransaction();
+            transaction.replace(R.id.container,new CatAnimationFragment());
             transaction.commit();
         }
     }
