@@ -12,4 +12,7 @@
     <string name="program_animation_mode_text">Program Animation</string>
     <string name="simple_animation_menu_item_text">Simple Animation</string>
     <string name="ball_simple_animation_menu_item_text">Simple Ball Animation</string>
+    <string name="object_animation_text">Object Animation</string>
+    <string name="custom_animation_mode_text">Custom Animation</string>
+    <string name="cat_animation_menu_item_text">Cat Animation</string>
 </resources>
