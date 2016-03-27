@@ -15,13 +15,13 @@
         android:id="@+id/options_radio_group">
 
         <RadioButton
-            android:layout_weight="0.5"
+            android:layout_weight="0.25"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/object_animation_text"
             android:id="@+id/object_animation_radio_button"
             android:checked="true"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -29,7 +29,15 @@
             android:text="@string/custom_animation_mode_text"
             android:id="@+id/custom_animation_radio_button"
             android:checked="false"
-            android:textSize="20sp"
+            android:textSize="13sp"
+            android:layout_weight="0.25" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/xml_radio_button_text"
+            android:id="@+id/xml_animation_radio_button"
+            android:checked="false"
+            android:textSize="13sp"
             android:layout_weight="0.5" />
     </RadioGroup>
 

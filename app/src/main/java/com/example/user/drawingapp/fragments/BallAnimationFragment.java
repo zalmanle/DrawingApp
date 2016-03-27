@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
 
@@ -20,7 +21,7 @@ import com.example.user.drawingapp.customanimations.ArcTranslateAnimation;
 /**
  * Created by User on 21/03/2016.
  */
-public class BallFragment extends Fragment
+public class BallAnimationFragment extends Fragment
         implements View.OnClickListener,
         Animator.AnimatorListener{
 
@@ -28,6 +29,8 @@ public class BallFragment extends Fragment
     private static final int OBJECT_MODE_CODE = 210;
 
     private static final int CUSTOM_MODE_CODE = 220;
+
+    private static final int XML_MODE_CODE = 230;
     //endregion
     //region Instance Variables
     private RadioGroup modeGroup;
@@ -93,6 +96,9 @@ public class BallFragment extends Fragment
                     case R.id.custom_animation_radio_button:
                         currentCode = CUSTOM_MODE_CODE;
                         break;
+                    case R.id.xml_animation_radio_button:
+                        currentCode = XML_MODE_CODE;
+                        break;
                 }
             }
         });
@@ -114,8 +120,15 @@ public class BallFragment extends Fragment
         else if(currentCode == CUSTOM_MODE_CODE){
             animateWithCustomAnimation();
         }
+        else if(currentCode == XML_MODE_CODE){
+            animateWithXML();
+        }
     }
 
+    private void animateWithXML(){
+        Animation animation = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.ball_animation);
+        imageView.startAnimation(animation);
+    }
     private void animateWithObject() {
 
         if (animatorX1 == null){

@@ -15,4 +15,5 @@
     <string name="object_animation_text">Object Animation</string>
     <string name="custom_animation_mode_text">Custom Animation</string>
     <string name="cat_animation_menu_item_text">Cat Animation</string>
+    <string name="xml_radio_button_text">XML</string>
 </resources>

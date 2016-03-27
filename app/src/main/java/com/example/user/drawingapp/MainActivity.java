@@ -10,7 +10,7 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 
 import com.example.user.drawingapp.fragments.AdvancedPainterFragment;
-import com.example.user.drawingapp.fragments.BallFragment;
+import com.example.user.drawingapp.fragments.BallAnimationFragment;
 import com.example.user.drawingapp.fragments.CatAnimationFragment;
 import com.example.user.drawingapp.fragments.PainterFragment;
 import com.example.user.drawingapp.fragments.SimpleAnimationFragment;
@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
 
         private void loadSimpleBollAnimationFragment(){
             transaction = manager.beginTransaction();
-            transaction.replace(R.id.container,new BallFragment());
+            transaction.replace(R.id.container,new BallAnimationFragment());
             transaction.commit();
         }
 
