@@ -152,7 +152,7 @@ public class BallFragment extends Fragment
 
     private void animateWithCustomAnimation() {
         if(translate == null) {
-            translate = new ArcTranslateAnimation(2000, Animation.ABSOLUTE, 0, Animation.ABSOLUTE, 700, Animation.ABSOLUTE, -2500);
+             translate = new ArcTranslateAnimation(2000, Animation.ABSOLUTE, 0, Animation.ABSOLUTE, 700, Animation.ABSOLUTE, -2500);
         }
         imageView.startAnimation(translate);
     }
