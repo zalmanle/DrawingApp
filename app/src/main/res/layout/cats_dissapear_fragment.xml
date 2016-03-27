@@ -3,6 +3,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <RadioGroup
+        android:layout_alignParentTop="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="1"
+        android:id="@+id/options_radio_group">
+
+        <RadioButton
+            android:layout_weight="0.5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/object_animation_text"
+            android:id="@+id/object_animation_radio_button"
+            android:checked="true"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/xml_radio_button_text"
+            android:id="@+id/xml_animation_radio_button"
+            android:checked="false"
+            android:textSize="20sp"
+            android:layout_weight="0.5" />
+    </RadioGroup>
     <ImageView
         android:id="@+id/cat_image_view"
         android:src="@drawable/cats_photo"
